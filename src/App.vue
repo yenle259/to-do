@@ -16,7 +16,8 @@
   <div class="new-task-form">
     <AddTaskForm />
   </div>
-
+  <p class="none" v-if="toDoStore.totalCount==0">No data, add your new task.
+  </p>
   <div v-if="filter === 'all'">
     <div class="task-list" v-for="toDoItem in todo">
       <ToDoItem :toDoItem="toDoItem" />
@@ -55,6 +56,12 @@ export default {
 </script>
 
 <style scoped>
+.none{
+  font-style: italic;
+  margin: 0px auto;
+  color: gray;
+  text-align: center;
+}
 .name {
   max-width: 640px;
 }
